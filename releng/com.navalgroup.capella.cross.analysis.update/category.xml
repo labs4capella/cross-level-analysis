@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Copyright (c) 2021 Naval Group SA.
+    All right reserved. This program and the accompanying materials are made 
+    available under the terms of the Eclipse Public License 2.0
+    which is available at https://www.eclipse.org/legal/epl-2.0/
+
+    Contributors:
+        Obeo - initial API and implementation
+-->
+<site>
+   <feature id="com.navalgroup.capella.cross.analysis.feature" version="1.1.0.qualifier">
+      <category name="com.navalgroup.capella.cross.analysis.category"/>
+   </feature>
+   <feature id="com.navalgroup.capella.permission.feature">
+      <category name="dependencies"/>
+   </feature>
+   <category-def name="com.navalgroup.capella.cross.analysis.category" label="Capella Cross Analysis Viewpoint">
+      <description>
+         Update-site for Capella 1.4.x &lt;-&gt; Capella Cross Analysis Viewpoint.
+      </description>
+   </category-def>
+   <category-def name="dependencies" label="Dependencies">
+      <description>
+         Contains all dependencies needed by the main feature
+      </description>
+   </category-def>
+</site>

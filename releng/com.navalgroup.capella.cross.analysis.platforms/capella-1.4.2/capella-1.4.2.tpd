@@ -1,0 +1,37 @@
+/*******************************************************************************
+ *  Copyright (c) 2021 Naval Group SA.
+ *   All right reserved. This program and the accompanying materials are made 
+ *   available under the terms of the Eclipse Public License 2.0
+ *   which is available at https://www.eclipse.org/legal/epl-2.0/
+ *
+ *   Contributors:
+ *       Obeo - initial API and implementation
+ *******************************************************************************/
+target "Capella 1.4.2"
+
+with requirements
+
+location eclipse "https://download.eclipse.org/releases/2019-06/" {
+      org.eclipse.ui lazy
+      org.eclipse.core.resources lazy
+      org.eclipse.sirius lazy
+      org.eclipse.sirius.common.acceleo.aql lazy
+}
+
+location eclipse_gmf "https://download.eclipse.org/releases/2020-09/" {
+      org.eclipse.gmf.runtime.diagram.ui lazy
+}
+
+location sirius "https://archive.eclipse.org/sirius/updates/releases/6.3.3/2019-06/" {
+      org.eclipse.sirius.diagram lazy
+      org.eclipse.sirius.diagram.ui lazy
+}
+
+location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/updates/release/runtime/1.4.2/" {
+}
+
+location capella-1.4.2 "https://download.eclipse.org/capella/core/updates/releases/1.4.2-R20201014-090868/org.polarsys.capella.rcp.site/" {
+      org.polarsys.capella.core.data.gen lazy
+      org.polarsys.capella.core.sirius.analysis lazy
+      org.polarsys.capella.core.semantic.queries lazy
+}

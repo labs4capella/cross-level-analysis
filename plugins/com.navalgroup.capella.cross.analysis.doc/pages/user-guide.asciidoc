@@ -1,0 +1,114 @@
+= Documentation utilisateur du point de vue sur la traçabilité inter-niveaux
+Copyright (C) 2021 Naval Group. All Rights Reserved.
+:doctype: book
+:source-highlighter: rouge
+:listing-caption: Listing
+:toc:
+:toclevels: 4
+:sectnums:
+:icons: image
+
+== Définition[[definition]]
+
+Ce point de vue permet d'obtenir un nouveau type de diagramme capable d'afficher la traçabilité inter-niveaux d'un élément du modèle Capella.
+
+Il est compatible avec Capella 1.4.1 et 1.4.2.
+
+== Point de vue (viewpoint)[[viewpoint]]
+
+Pour utiliser ce point vue, il faut tout d'abord l'activer avec le menu clic droit sur un *.aird  > _'Viewpoints Selection_'. Une boite de dialogue apparaît avec tous les points de vue disponibles, il faut cocher _'Cross Analysis_'.
+
+image:images/viewpointSelection.png[align="center", pdfwidth='50%']
+
+=== Diagramme de traçabilité inter-niveaux
+
+==== Action d'initialisation
+
+Pour créer un nouveau diagramme, il faut sélectionner un élément Capella depuis la vue Model Explorer ou depuis un diagramme, puis clic droit _Cross Analysis > Init Cross Layers Diagram (CLD)_
+
+image:images/action.png[align="center", pdfwidth='50%']
+
+Cette action va :
+
+* créer le diagramme CLD,
+* l'ajouter à la liste des diagrammes de l'élément sélectionné : le diagramme apparaît sous l'élément sélectionné dans le Model Explorer,
+* le peupler,
+* l'ouvrir.
+
+image:images/example.png[align="center", pdfwidth='50%']
+
+Cette action est disponible à partir des types Capella suivants :
+
+|===
+|*Couche* |*Type*
+|OA
+|Entity
+|OA
+|Actor
+|OA
+|Activity
+|OA
+|Capability
+|
+|
+|SA
+|Component
+|SA
+|Actor
+|SA
+|Function
+|SA
+|Capability
+|
+|
+|LA
+|Component
+|LA
+|Actor
+|LA
+|Function
+|LA
+|Capability Capability Realization
+|
+|
+|PA
+|Component
+|PA
+|Actor
+|PA
+|Function
+|PA
+|Capability Capability Realization
+|===
+
+
+WARNING: Une action de création de diagramme CLD est présente dans le menu Capella _New Diagram / Table..._, il s'agit de l'action de création par défaut qui initialise un diagramme vide. Il ne faut pas utiliser celle-ci mais celle présente dans le menu _Cross Analysis > Init Cross Layers Diagram (CLD)_.
+
+
+==== Contenu
+
+Le diagramme est créé à partir de l'élément sélectionné, ce sera l'élément racine du diagramme. Il contient :
+
+* en tant que nœud :
+** l'élément racine
+** les éléments référencés depuis l'élément racine par les liens de réalisation (premier niveau)
+** les éléments référencés depuis les éléments de premier niveau par les liens de réalisation s'il y en a (deuxième niveau)
+** et ainsi de suite tant qu'il existe des liens de réalisation.
+* en tant que lien :
+** les liens de réalisations dans le sens couche OA vers couche PA (realizing).
+
+==== Style
+
+* Les éléments appartenant à la couche OA seront affichés comme dans le diagramme _Operational Architecture Blank_  ou _Contextual Operational Capability_.
+* Les éléments appartenant à la couche SA seront affichés comme dans le diagramme _System Architecture Blank_ ou _Missions Capabilities Blank_.
+* Les éléments appartenant à la couche LA seront affichés comme dans le diagramme _Logical Architecture Blank_ ou _Capability Realization Blank_.
+* Les éléments appartenant à la couche SA seront affichés comme dans le diagramme _Physical Architecture Blank_ ou _Capability Realization Blank_.  
+
+Pour reconnaitre plus facilement l'élément racine du diagramme, une bordure plus large lui est appliquée. Par exemple, ici le diagramme est créé sur la SystemFunction _Provide Navigation Data_.
+
+image:images/exampleRoot.png[align="center", pdfwidth='50%']
+
+==== Édition
+
+Ce diagramme est essentiellement un diagramme de visualisation. Les liens de sont pas éditables et il n'est pas possible d'ajouter d'autres éléments que ceux calculés lors de son initialisation.
+Cependant, comme dans les autres diagrammes Capella, les nœuds sont éditables, supprimables et les actions de navigation/création vers d'autres diagrammes sont aussi disponibles.

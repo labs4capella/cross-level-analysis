@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde?>
+<!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
+<target name="Capella 1.4.2" sequenceNumber="1652358684">
+  <locations>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.ui" version="0.0.0"/>
+      <unit id="org.eclipse.core.resources" version="0.0.0"/>
+      <unit id="org.eclipse.sirius" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.common.acceleo.aql" version="0.0.0"/>
+      <repository id="eclipse" location="https://download.eclipse.org/releases/2019-06/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.gmf.runtime.diagram.ui" version="0.0.0"/>
+      <repository id="eclipse_gmf" location="https://download.eclipse.org/releases/2020-09/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.sirius.diagram" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.diagram.ui" version="0.0.0"/>
+      <repository id="sirius" location="https://archive.eclipse.org/sirius/updates/releases/6.3.3/2019-06/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <repository id="kitalpha-runtime-core-master" location="https://download.eclipse.org/kitalpha/updates/release/runtime/1.4.2/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.polarsys.capella.core.data.gen" version="0.0.0"/>
+      <unit id="org.polarsys.capella.core.sirius.analysis" version="0.0.0"/>
+      <unit id="org.polarsys.capella.core.semantic.queries" version="0.0.0"/>
+      <repository id="capella-1.4.2" location="https://download.eclipse.org/capella/core/updates/releases/1.4.2-R20201014-090868/org.polarsys.capella.rcp.site/"/>
+    </location>
+  </locations>
+</target>

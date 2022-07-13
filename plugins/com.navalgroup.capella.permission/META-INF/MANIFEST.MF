@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.navalgroup.capella.permission
+Bundle-SymbolicName: com.navalgroup.capella.permission;singleton:=true
+Built-By: jenkins
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.jface,org.eclipse.emf.common.ui,
+ org.eclipse.sirius.ext.base,org.eclipse.emf.common,
+ org.eclipse.sirius.ecore.extender,
+ org.eclipse.emf.ecore,org.eclipse.sirius
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %Bundle-Vendor
+Export-Package: com.navalgroup.capella.permission,
+ com.navalgroup.capella.permission.extension,
+ com.navalgroup.capella.permission.util
+Bundle-Name: %Bundle-Name
+Bundle-Version: 1.1.0.qualifier
+Bundle-Activator: com.navalgroup.capella.permission.PermissionPlugin$Implementation
+Created-By: Apache Maven 3.6.3
+Build-Jdk: 1.8.0_282
+
