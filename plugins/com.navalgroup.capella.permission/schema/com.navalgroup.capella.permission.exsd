@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- 
+    Copyright (c) 2021 Naval Group SA.
+    All right reserved. This program and the accompanying materials are made 
+    available under the terms of the Eclipse Public License 2.0
+    which is available at https://www.eclipse.org/legal/epl-2.0/
+
+    Contributors:
+        Obeo - initial API and implementation
+-->
+<schema targetNamespace="com.navalgroup.capella.permission" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="com.navalgroup.capella.permission" id="com.navalgroup.capella.permission" name="com.navalgroup.capella.permission"/>
+      </appinfo>
+      <documentation>
+         This extension point allows to define a way to lock/unlock Capella models elements.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="permission" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="permission">
+      <annotation>
+         <documentation>
+            This extension point allows to define a way to lock/unlock Capella models elements
+.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The contributed IPermission
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":com.navalgroup.capella.permission.extension.IPermission"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="priority" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Integer used to define the priority in which this permission should be called. The highest priority participant will be called first. ( 0 is called after 1 that is called after 2 etc...)
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="key" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Key to define which permission extension must be used.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         since 1.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+</schema>

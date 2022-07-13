@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: com.navalgroup.capella.cross.analysis.design.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: NAVALGROUP
+Fragment-Host: com.navalgroup.capella.cross.analysis.design;bundle-version="1.0.0"
+Automatic-Module-Name: com.navalgroup.capella.cross.analysis.design.test
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.junit,
+ org.polarsys.capella.core.libraries;bundle-version="1.4.0",
+ org.polarsys.capella.core.model.handler;bundle-version="1.4.0"
+Export-Package: com.navalgroup.capella.cross.analysis.design.test
